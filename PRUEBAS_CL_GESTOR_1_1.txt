@@ -1,0 +1,17 @@
+PRUEBAS MANUALES RECOMENDADAS
+
+[ ] Crear una cuenta con correo y contraseña.
+[ ] Confirmar correo (si la confirmación está habilitada).
+[ ] Iniciar sesión y registrar un perfume de prueba.
+[ ] Registrar cliente ficticio.
+[ ] Registrar una venta de contado y comprobar que baja el stock.
+[ ] Registrar una venta a crédito y un abono.
+[ ] Registrar egreso.
+[ ] Crear un corte.
+[ ] Exportar JSON de respaldo.
+[ ] Iniciar sesión en otro dispositivo con la misma cuenta y comprobar sincronización.
+[ ] Cerrar sesión y confirmar que vuelve a la pantalla de login.
+[ ] Probar una cuenta distinta y verificar que no se ven datos de la primera.
+[ ] Importar respaldo en un entorno de prueba antes de usarlo para recuperación real.
+
+Usa solo datos ficticios durante las pruebas iniciales.

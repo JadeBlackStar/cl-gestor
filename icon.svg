@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" role="img" aria-label="Casa Lora">
+  <g fill="none" stroke="#111111" stroke-width="7" stroke-linecap="round">
+    <path d="M20 145 L220 145"/>
+    <path d="M25 139 L35 108"/><path d="M40 139 L58 91"/><path d="M57 139 L78 75"/>
+    <path d="M74 139 L97 59"/><path d="M91 139 L116 48"/><path d="M108 139 L132 42"/>
+    <path d="M125 139 L147 47"/><path d="M142 139 L163 57"/><path d="M159 139 L181 73"/>
+    <path d="M176 139 L199 93"/><path d="M193 139 L215 113"/>
+  </g>
+  <path d="M91 145 Q120 100 149 145 Z" fill="#111111"/>
+</svg>

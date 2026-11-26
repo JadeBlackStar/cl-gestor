@@ -1,0 +1,41 @@
+CL GESTOR 1.1 — PARCHE DE ESTABILIZACIÓN
+
+Archivos del paquete:
+- index.html: aplicación web (HTML, CSS, JavaScript).
+- icon.svg: logotipo usado en el login y menú.
+- CL_Gestor_SUPABASE.sql: tabla y políticas de seguridad para Supabase.
+
+CONFIGURACIÓN / ACTUALIZACIÓN
+1. Antes de sustituir, conserva una copia del repositorio actual (Download ZIP).
+2. En Supabase, abre SQL Editor y ejecuta el archivo CL_Gestor_SUPABASE.sql.
+   Es idempotente para la tabla, política y habilitación de Realtime en lo habitual.
+3. En index.html busca SUPABASE_URL y SUPABASE_ANON_KEY y sustituye los valores
+   de ejemplo por Project URL y anon/public key del proyecto propio. No uses service_role.
+4. En GitHub, sustituye index.html y sube icon.svg (el HTML usa ese nombre).
+   Si icon.svg ya está en el repo, puedes reemplazarlo por el logo actualizado.
+5. GitHub Pages: Settings > Pages > Deploy from branch, branch main y carpeta /root.
+   Guarda y espera a que GitHub Pages muestre el enlace.
+6. Abre el enlace HTTPS, crea una cuenta y confirma el correo si Supabase lo solicita.
+7. Inicia sesión desde otro dispositivo con esa misma cuenta para sincronizar.
+
+CAMBIOS DEL PARCHE
+- Cache local separada por cuenta, no compartida entre usuarios del mismo navegador.
+- Al cerrar sesión se limpian los datos en memoria y se cancela la sincronización pendiente.
+- Se reduce el riesgo de que una actualización Realtime sobrescriba una edición local
+  que esté esperando sincronización.
+- Validaciones adicionales de productos, crédito de clientes y egresos.
+- Logo ajustado a icon.svg.
+- SQL limita la tabla a usuarios autenticados y aplica RLS por usuario.
+
+LIMITACIONES IMPORTANTES
+- La sincronización es una fila JSON por cuenta; si dos dispositivos editan a la vez,
+  pueden existir conflictos. Evita editar simultáneamente desde ambos dispositivos.
+- RLS ayuda a separar cuentas, pero no convierte esta aplicación en un sistema auditado.
+- El frontend aún no es una aplicación endurecida para datos sensibles. Evita almacenar
+  identificaciones, tarjetas, documentos, domicilios completos u otra información delicada.
+- Exporta respaldos regularmente. Prueba recuperación antes de depender de los registros.
+- El hosting y la configuración de Supabase (correo, contraseñas, políticas y proyecto)
+  también deben protegerse. No compartas la clave service_role.
+- No es software contable certificado.
+
+Tecnologías: HTML, CSS, JavaScript y Supabase Auth, PostgreSQL (JSONB), RLS y Realtime.
